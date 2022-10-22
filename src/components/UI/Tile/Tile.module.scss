@@ -64,10 +64,6 @@
 	.buttons {
 		display: flex;
 		gap: 10px;
-
-		button {
-			background: transparent;
-		}
 	}
 }
 
@@ -111,6 +107,7 @@
 		padding: 5px;
 		color: $cSilver;
 		transition: color 250ms ease-in-out;
+		background: transparent;
 		cursor: pointer;
 
 		&.star {
