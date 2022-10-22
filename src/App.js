@@ -1,58 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { AlbumList, NavMenu, UButton, UInput } from './components'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
-  );
+	const [name, setName] = useState('')
+
+	const dispatch = useDispatch()
+	const albums = useSelector(state => state.album.albums)
+
+	const formHandler = event => {
+		event.preventDefault()
+
+		dispatch({
+			type: 'ADD_ALBUM',
+			payload: name,
+		})
+
+		setName('')
+	}
+
+	const nameChange = e => {
+		setName(e.target.value)
+	}
+
+	return (
+		<div className='App'>
+			<NavMenu />
+			<div className='container'>
+				<div className='layout'>
+					<form onSubmit={formHandler} className='form_add_album'>
+						<h2 className='form_title'>Add new album</h2>
+						<div className='form_data'>
+							<UInput
+								type='text'
+								onChange={nameChange}
+								value={name}
+								className='input_name'
+								placeholder='Write album name'
+								required
+							/>
+							<UButton type='submit' className='btn1'>
+								Add to list
+							</UButton>
+						</div>
+					</form>
+
+					<AlbumList albums={albums} />
+				</div>
+			</div>
+		</div>
+	)
 }
 
-export default App;
+export default App

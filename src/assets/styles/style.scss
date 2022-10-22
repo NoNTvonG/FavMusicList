@@ -1,0 +1,102 @@
+@import './container';
+@import './reset';
+@import './variables';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+//* Global
+body {
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: $cCloud;
+}
+
+//* Components
+header {
+	display: flex;
+	align-items: center;
+	min-height: 70px;
+	box-shadow: 0 0 10px 2px rgba($cBlack, 0.05);
+
+	.logo {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+}
+
+.album_list {
+	padding-top: 50px;
+
+	&_handlers {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		margin-bottom: 20px;
+		gap: 10px;
+
+		button {
+			display: flex;
+			align-items: center;
+			border: none;
+			background: none;
+			cursor: pointer;
+			height: 20px;
+			color: $cSilver;
+			transition: color 250ms ease-in-out;
+
+			&:hover {
+				color: $cAsphalt;
+			}
+
+			&.list {
+				font-size: 18px;
+			}
+			&.grid {
+			}
+		}
+	}
+
+	&_grid {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+
+	&_list {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+}
+
+//* Pages
+.App {
+	.layout {
+		padding-top: 40px;
+		.form_add_album {
+			display: flex;
+			flex-direction: column;
+			border-bottom: 1px solid $cSilverLight;
+			padding-bottom: 30px;
+
+			.form_title {
+				font-size: 24px;
+				margin-bottom: 10px;
+				font-weight: 300;
+			}
+
+			.form_data {
+				display: flex;
+				flex-direction: row;
+				gap: 20px;
+
+				.input_name {
+					flex-grow: 1;
+				}
+			}
+		}
+	}
+}

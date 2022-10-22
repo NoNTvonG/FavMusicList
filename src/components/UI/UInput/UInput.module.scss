@@ -1,0 +1,11 @@
+@import '../../../assets/styles/_variables.scss';
+
+.input {
+	border: none;
+	border-radius: 10px;
+	outline: none;
+	padding: 10px;
+	min-height: 40px;
+	background-color: transparent;
+	box-shadow: 0 0 10px 2px rgba($cBlack, 0.05);
+}
