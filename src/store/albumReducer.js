@@ -19,7 +19,7 @@ export const albumReducer = (state = initialState, action) => {
 					...state.albums,
 					{
 						id: state.albums.length,
-						name: action.payload,
+						name: action.payload.trim(),
 						addTime: Date.now(),
 						like: false,
 					},
@@ -81,6 +81,14 @@ export const albumReducer = (state = initialState, action) => {
 					return 0
 				}),
 			}
+		// return {
+		// 	...state,
+		// 	albums: [...state.albums].sort((a, b) => {
+		// 		if (a.name.toLowerCase() < b.name.toLowerCase()) return -1
+		// 		if (a.name.toLowerCase() > b.name.toLowerCase()) return 1
+		// 		return 0
+		// 	}),
+		// }
 		case 'SORTED_BY_DATE':
 			return {
 				...state,
