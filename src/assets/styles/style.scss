@@ -35,42 +35,6 @@ header {
 		align-items: center;
 		justify-content: space-between;
 		margin-bottom: 20px;
-
-		.album_list_filter {
-			.filter_title {
-				color: $cAsphalt;
-				font-size: 14px;
-				margin-right: 10px;
-			}
-		}
-
-		.album_list_handlers {
-			display: flex;
-			align-items: center;
-			justify-content: flex-end;
-			gap: 10px;
-
-			button {
-				display: flex;
-				align-items: center;
-				border: none;
-				background: none;
-				cursor: pointer;
-				height: 20px;
-				color: $cSilver;
-				transition: color 250ms ease-in-out;
-
-				&:hover {
-					color: $cAsphalt;
-				}
-
-				&.list {
-					font-size: 18px;
-				}
-				&.grid {
-				}
-			}
-		}
 	}
 
 	&_grid {
@@ -87,31 +51,73 @@ header {
 	}
 }
 
+.album_list_filter {
+	.filter_title {
+		color: $cAsphalt;
+		font-size: 14px;
+		margin-right: 10px;
+	}
+}
+
+.album_list_handlers {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 10px;
+
+	button {
+		display: flex;
+		align-items: center;
+		border: none;
+		background: none;
+		cursor: pointer;
+		height: 20px;
+		color: $cSilver;
+		transition: color 250ms ease-in-out;
+
+		&:hover {
+			color: $cAsphalt;
+		}
+
+		&.list {
+			font-size: 18px;
+		}
+		&.grid {
+		}
+
+		&.active {
+			color: $cAsphalt;
+		}
+	}
+}
+
+.form_add_album {
+	display: flex;
+	flex-direction: column;
+	border-bottom: 1px solid $cSilverLight;
+	padding-bottom: 30px;
+
+	.form_title {
+		font-size: 24px;
+		margin-bottom: 10px;
+		font-weight: 300;
+	}
+
+	.form_data {
+		display: flex;
+		flex-direction: row;
+		gap: 20px;
+
+		.input_name {
+			flex-grow: 1;
+		}
+	}
+}
+
 //* Pages
 .App {
 	.layout {
 		padding-top: 40px;
-		.form_add_album {
-			display: flex;
-			flex-direction: column;
-			border-bottom: 1px solid $cSilverLight;
-			padding-bottom: 30px;
-
-			.form_title {
-				font-size: 24px;
-				margin-bottom: 10px;
-				font-weight: 300;
-			}
-
-			.form_data {
-				display: flex;
-				flex-direction: row;
-				gap: 20px;
-
-				.input_name {
-					flex-grow: 1;
-				}
-			}
-		}
+		padding-bottom: 40px;
 	}
 }

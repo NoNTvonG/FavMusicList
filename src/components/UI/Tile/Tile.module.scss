@@ -33,14 +33,32 @@
 		right: 0;
 		display: flex;
 		flex-direction: row;
-		background: $cSilverLight;
-		gap: 1px;
 		visibility: hidden;
 		opacity: 0;
 		transition: all 250ms ease-in-out;
+		border-top: 1px solid $cSilverLight;
 		border-bottom-left-radius: 10px;
 		border-bottom-right-radius: 10px;
 		overflow: hidden;
+
+		button {
+			&:hover {
+				background: $cSilverLight;
+			}
+			&:not(:last-child) {
+				border-right: 1px solid $cSilverLight;
+			}
+		}
+	}
+
+	@media screen and (max-width: 1199px) {
+		max-width: calc((100% / 3) - 13.333px);
+	}
+	@media screen and (max-width: 899px) {
+		max-width: calc((100% / 2) - 10px);
+	}
+	@media screen and (max-width: 599px) {
+		max-width: 100%;
 	}
 }
 
@@ -50,6 +68,7 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
+	gap: 20px;
 	border-radius: 10px;
 	min-height: 40px;
 	padding: 15px;
@@ -106,7 +125,7 @@
 		border: none;
 		padding: 5px;
 		color: $cSilver;
-		transition: color 250ms ease-in-out;
+		transition: all 250ms ease-in-out;
 		background: transparent;
 		cursor: pointer;
 
