@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { AlbumList, NavMenu, UButton, UInput } from './components'
 
 function App() {
 	const [name, setName] = useState('')
-
 	const dispatch = useDispatch()
-	const albums = useSelector(state => state.album.albums)
 
 	const formHandler = event => {
 		event.preventDefault()
@@ -45,7 +43,7 @@ function App() {
 						</div>
 					</form>
 
-					<AlbumList albums={albums} />
+					<AlbumList />
 				</div>
 			</div>
 		</div>

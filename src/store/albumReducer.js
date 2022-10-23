@@ -62,6 +62,34 @@ export const albumReducer = (state = initialState, action) => {
 			saveLocalUI(handlerUI.albumsUI)
 
 			return handlerUI
+
+		case 'SORTED_BY_ID':
+			return {
+				...state,
+				albums: [...state.albums].sort((a, b) => {
+					if (a.id < b.id) return -1
+					if (a.id > b.id) return 1
+					return 0
+				}),
+			}
+		case 'SORTED_BY_NAME':
+			return {
+				...state,
+				albums: [...state.albums].sort((a, b) => {
+					if (a.name.toLowerCase() < b.name.toLowerCase()) return -1
+					if (a.name.toLowerCase() > b.name.toLowerCase()) return 1
+					return 0
+				}),
+			}
+		case 'SORTED_BY_DATE':
+			return {
+				...state,
+				albums: [...state.albums].sort((a, b) => {
+					if (a.addTime < b.addTime) return -1
+					if (a.addTime > b.addTime) return 1
+					return 0
+				}),
+			}
 		default:
 			return state
 	}

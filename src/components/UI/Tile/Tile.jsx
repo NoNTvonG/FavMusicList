@@ -26,8 +26,8 @@ const Tile = ({ album }) => {
 
 	return (
 		<div
-			className={`${albumTypeUI == 'grid' ? style.tile : ''} ${
-				albumTypeUI == 'list' ? style.list : ''
+			className={`${albumTypeUI === 'grid' ? style.tile : ''} ${
+				albumTypeUI === 'list' ? style.list : ''
 			} ${album.like ? style.like : ''}`}
 		>
 			<h2 className={style.name}>{album.name}</h2>
