@@ -1,8 +1,9 @@
-import NavMenu from './NavMenu'
-import UInput from './UI/UInput/UInput'
-import UButton from './UI/UButton/UButton'
-import Tile from './UI/Tile/Tile'
-import AlbumList from './AlbumList'
-import USelect from './UI/USelect/USelect'
-
-export { NavMenu, UInput, UButton, Tile, AlbumList, USelect }
+export { default as NavMenu } from './NavMenu.jsx'
+export { default as UInput } from './UI/UInput/UInput'
+export { default as UButton } from './UI/UButton/UButton.jsx'
+export { default as Tile } from './UI/Tile/Tile.jsx'
+export { default as AlbumList } from './AlbumList.jsx'
+export { default as USelect } from './UI/USelect/USelect.jsx'
+export { default as AddNewAlbumForm } from './AddNewAlbumForm.jsx'
+export { default as AlbumListFilter } from './AlbumListFilter.jsx'
+export { default as AlbumListUIHandler } from './AlbumListUIHandler.jsx'
